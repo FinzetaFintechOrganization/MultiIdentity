@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AsyncIdentity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241203032902_mig1")]
+    [Migration("20250109181613_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
