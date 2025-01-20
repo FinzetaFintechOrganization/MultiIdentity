@@ -1,6 +1,0 @@
-@AsyncIdentity_HostAddress = http://localhost:5282
-
-GET {{AsyncIdentity_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
