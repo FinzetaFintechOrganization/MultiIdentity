@@ -28,10 +28,24 @@ public class OAuthController : Controller
     [HttpPost]
     public IActionResult Authorize(
         string username,
+        string password,
         string redirectUri,
         string state)
     {
+
+        if (username != "admin" || password != "password") 
+        {
+            ModelState.AddModelError(string.Empty, "Invalid username or password.");
+            return View(); 
+        }
+
         const string code = "sample_code_123";
+
+        if (string.IsNullOrEmpty(redirectUri))
+        {
+            return BadRequest("Redirect URI is required");
+        }
+
         var query = new QueryBuilder
         {
             { "code", code },
