@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
-builder.Services.AddAuthentication("OAuth").AddJwtBearer("OAuth", cfg =>
+builder.Services.AddAuthentication().AddJwtBearer(cfg =>
 {
     var secretBytes = Encoding.UTF8.GetBytes(Constants.Secret);
     var key = new SymmetricSecurityKey(secretBytes);

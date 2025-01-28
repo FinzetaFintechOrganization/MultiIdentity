@@ -26,8 +26,6 @@ public class HomeController : Controller
         var client = _httpClientFactory.CreateClient();
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-        var serverResponse = await client.GetAsync("http://localhost:5143/secret/index");
-
         return View();
     }
 }

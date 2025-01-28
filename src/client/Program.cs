@@ -21,8 +21,8 @@ builder.Services.AddAuthentication(config =>
     config.CallbackPath = "/oauth/callback";
     config.ClientId = "client_id";
     config.ClientSecret = "client_secret";
-    config.AuthorizationEndpoint = "http://localhost:5143/oauth/authorize";
-    config.TokenEndpoint = "http://localhost:5143/oauth/token";
+    config.AuthorizationEndpoint = "https://localhost:7095/oauth/authorize";
+    config.TokenEndpoint = "https://localhost:7095/oauth/token";
     config.SaveTokens = true;
 
     config.Events = new OAuthEvents
@@ -48,7 +48,6 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
